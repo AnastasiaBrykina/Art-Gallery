@@ -1,0 +1,31 @@
+@import "../../var.scss";
+@import "../../colors.scss";
+@import "../../fonts.scss";
+
+$text-color: var(--info-text-color);
+
+.info {
+  width: 100%;
+  margin-top: 60px;
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  .valueContainer {
+    .value {
+      display: inline-block;
+      font-family: "Inter", serif;
+      font-weight: 700;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .gray {
+    color: $text-color;
+    font-size: $sm-text;
+  }
+}

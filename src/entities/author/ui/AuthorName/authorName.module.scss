@@ -1,0 +1,20 @@
+@import "../../../../shared/var.scss";
+@import "../../../../shared/colors.scss";
+@import "../../../../shared/fonts.scss";
+
+.author {
+  font-size: $xs-text;
+  font-family: "Cormorant SC", sans-serif;
+  font-weight: 500;
+  margin-bottom: 8px;
+
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: $tablet) {
+  .author {
+    font-size: $base-text;
+  }
+}

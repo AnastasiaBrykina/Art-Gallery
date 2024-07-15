@@ -1,0 +1,120 @@
+@import "../../../../shared/colors.scss";
+@import "../../../../shared/var.scss";
+@import "../../../../shared/fonts.scss";
+
+$background-color: var(--background-color);
+$accent-color: var(--accent-color);
+
+.paintingContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.painting {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1.5;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 84%;
+  height: 24%;
+  padding: 8px 12px;
+
+  background-color: $background-color;
+  text-transform: uppercase;
+}
+
+.mainDescription {
+  width: 100%;
+  padding-right: 20px;
+  position: absolute;
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s linear;
+}
+
+.extraDescription {
+  width: 100%;
+  padding-right: 20px;
+  position: absolute;
+  transform: translateX(-200%);
+  transition: transform 0.5s linear;
+}
+
+.paintingContainer:hover {
+  .extraDescription {
+    transform: translateX(0);
+  }
+
+  .mainDescription {
+    transform: translateY(300%);
+  }
+
+  .painting {
+    transform: scale(1.1);
+    transition: transform 1s;
+  }
+}
+
+.name {
+  font-size: $xs-text;
+  font-family: "Cormorant SC", sans-serif;
+  font-weight: 500;
+  margin-bottom: 8px;
+
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.date {
+  color: $accent-color;
+  font-size: $xxs-text;
+  font-family: "Inter", serif;
+  font-weight: 700;
+}
+
+@media (min-width: $tablet) {
+  .painting {
+    aspect-ratio: 1.6;
+  }
+
+  .description {
+    width: 85%;
+    height: 30%;
+    padding: 12px 12px;
+  }
+
+  .name {
+    font-size: $base-text;
+  }
+
+  .date {
+    font-size: $xs-text;
+  }
+}
+
+@media (min-width: $laptop) {
+  .painting {
+    aspect-ratio: 1.5;
+  }
+
+  .description {
+    width: 76%;
+    height: 31%;
+    padding: 20px 20px 20px 0px;
+  }
+
+  .mainDescription,
+  .extraDescription {
+    padding-left: 20px;
+    border-left: 2px solid $accent-color;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../shared/colors.scss";
+@import "../../shared/var.scss";
+
+$logo-color: var(--logo-color);
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  margin-bottom: 44px;
+  padding: 0 20px;
+
+  .container {
+    display: flex;
+    width: 100%;
+    max-width: 1240px;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      fill: $logo-color;
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  .logo {
+    width: 91px;
+    height: 20px;
+  }
+}

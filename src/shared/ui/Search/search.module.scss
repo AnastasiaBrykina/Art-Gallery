@@ -1,0 +1,83 @@
+@import "../../colors.scss";
+@import "../../var.scss";
+
+$icon-color: var(--logo-color);
+$input-border-color: var(--input-border-color);
+$input-bg-color: var(--input-bg-color);
+$input-hover-color: var(--text-color);
+
+.searchLine {
+  width: 100%;
+  margin-bottom: 20px;
+  display: grid;
+
+  form {
+    position: relative;
+    .searchContainer {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 0;
+
+      svg {
+        fill: $icon-color;
+      }
+    }
+    input {
+      width: 100%;
+      padding: 8px 48px;
+      outline: none;
+      text-overflow: ellipsis;
+      border: 1px solid $input-border-color;
+      border-radius: 4px;
+      color: $icon-color;
+      background-color: $input-bg-color;
+    }
+
+    input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+
+    input:focus {
+      border: 1px solid $input-hover-color;
+    }
+
+    .clearButton {
+      display: none;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+
+      border: none;
+      color: $icon-color;
+      background-color: $input-bg-color;
+    }
+
+    .block {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .searchLine {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    form {
+      grid-column-start: 2;
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  .searchLine {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    form {
+      grid-column-start: 3;
+    }
+  }
+}

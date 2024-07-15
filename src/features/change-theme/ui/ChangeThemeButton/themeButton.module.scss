@@ -1,0 +1,21 @@
+@import "../../../../shared/colors.scss";
+
+$theme-button-color: var(--theme-button-color);
+$theme-logo-color: var(--text-color);
+$hover-color: var(--hover-color);
+
+.themeButton {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: $theme-button-color;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  svg {
+    fill: $theme-logo-color;
+  }
+}

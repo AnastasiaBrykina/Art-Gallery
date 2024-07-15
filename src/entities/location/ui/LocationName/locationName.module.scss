@@ -1,0 +1,22 @@
+@import "../../../../shared/colors.scss";
+@import "../../../../shared/var.scss";
+@import "../../../../shared/fonts.scss";
+
+$accent-color: var(--accent-color);
+
+.location {
+  color: $accent-color;
+  font-size: $xxs-text;
+  font-family: "Inter", serif;
+  font-weight: 700;
+
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: $tablet) {
+  .location {
+    font-size: $xs-text;
+  }
+}
