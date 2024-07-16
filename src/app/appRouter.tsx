@@ -15,10 +15,13 @@ const routes: RouteObject[] = [
   },
 ];
 
-export const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout headerSlot={<HeaderWidget />} />,
-    children: routes,
-  },
-]);
+export const appRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout headerSlot={<HeaderWidget />} />,
+      children: routes,
+    },
+  ],
+  { basename: import.meta.env.BASE_URL },
+);
