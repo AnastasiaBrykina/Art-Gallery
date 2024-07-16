@@ -13,9 +13,11 @@ export function MainPage() {
   const [page, setPage] = useState<number>(1);
   const [value, setSearchValue] = useState<string>("");
 
-  const { data: allPaintings = [] } = usePaintingsQuery({ value });
+  const { data: allPaintings = [] } = usePaintingsQuery({
+    value: value.trim(),
+  });
   const { data: paintings = [] } = usePaintingsQuery({
-    value,
+    value: value.trim(),
     page,
     limit: LIMIT,
   });

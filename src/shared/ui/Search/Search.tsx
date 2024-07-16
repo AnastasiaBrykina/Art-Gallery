@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, useEffect } from "react";
+import { ChangeEvent } from "react";
 
 import SearchIcon from "@shared/assets/icons/search.svg?react";
 import styles from "./search.module.scss";
@@ -11,14 +11,6 @@ type SearchProps = {
 
 export function Search(props: SearchProps) {
   const { value, onChangeSearchValue, onClearSearchValue } = props;
-
-  const serchInput = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (serchInput.current) {
-      serchInput.current.focus();
-    }
-  });
 
   return (
     <section className={styles.searchLine}>
@@ -43,7 +35,6 @@ export function Search(props: SearchProps) {
           onChange={onChangeSearchValue}
           type="search"
           placeholder="Paiting title"
-          ref={serchInput}
         />
       </form>
     </section>
